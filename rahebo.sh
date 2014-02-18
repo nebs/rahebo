@@ -18,4 +18,8 @@ bundle exec rails g foundation:install
 bundle exec rails g rspec:install
 bundle exec rails g backbone:install
 
+# Replace the application layout with a haml version
+rm app/views/layouts/application.html.erb
+curl -o app/views/layouts/application.html.haml https://raw.github.com/nebspetrovic/rahebo/master/lib/application.html.haml
+
 echo "---- RAHEBO COMPLETED SUCCESSFULLY ----"
