@@ -10,7 +10,7 @@ gem 'jbuilder'
 gem 'haml-rails'
 gem 'zurb-foundation'
 gem 'rspec-rails'
-gem 'omniauth-facebook'
+gem 'omniauth'
 gem 'figaro'
 gem 'rails_12factor', group: :production
 gem 'backbone-on-rails'
