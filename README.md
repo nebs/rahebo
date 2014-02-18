@@ -12,7 +12,3 @@ Just open up a terminal and run this command (replacing `PROJECT_NAME` with your
 ```
 curl -s https://raw.github.com/nebspetrovic/rahebo/master/rahebo.sh | bash /dev/stdin PROJECT_NAME
 ```
-
-Why "rahebo"?
--------------
-**ra**ils **he**roku **bo**otstrap
