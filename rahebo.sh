@@ -18,3 +18,4 @@ bundle exec rails g foundation:install
 bundle exec rails g rspec:install
 bundle exec rails g backbone:install
 
+echo "---- RAHEBO COMPLETED SUCCESSFULLY ----"
