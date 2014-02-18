@@ -1,4 +1,8 @@
 rahebo
 ======
 
-A simple rails/heroku bootstrap script
+Rahebo is a simple script for setting up a basic Rails project ready to be deployed to Heroku with a single command.
+
+
+
+
