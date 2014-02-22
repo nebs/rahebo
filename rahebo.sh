@@ -25,4 +25,17 @@ bundle exec rails g backbone:install
 rm app/views/layouts/application.html.erb
 curl -o app/views/layouts/application.html.haml https://raw.github.com/nebspetrovic/rahebo/master/lib/application.html.haml
 
+# Copy over a postgres database configuration
+curl -o app/config/database.yml https://raw.github.com/nebspetrovic/rahebo/master/lib/database.yml
+
+# Add the project name in the database config
+sed -i "" "s/PROJECT_NAME/$project_name/g" app/config/database.yml
+
+# Create a postgres user for this project
+createuser -s -r $project_name
+
+# Create postgres test and dev databases
+createdb ${project_name}_test
+createdb ${project_name}_development
+
 echo "---- RAHEBO COMPLETED SUCCESSFULLY ----"
