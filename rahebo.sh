@@ -21,6 +21,13 @@ bundle exec rails g foundation:install
 bundle exec rails g rspec:install
 bundle exec rails g backbone:install
 
+# Create a basic welcome home page
+bundle exec rails g controller Welcome index
+
+# Change the route 'get welcome/index' to 'root welcome#index'
+sed -i "" "s/get/root/g" config/routes.rb
+sed -i "" "s/\//#/g" config/routes.rb
+
 # Replace the application layout with a haml version
 rm app/views/layouts/application.html.erb
 curl -o app/views/layouts/application.html.haml https://raw.github.com/nebspetrovic/rahebo/master/lib/application.html.haml
