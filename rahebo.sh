@@ -24,10 +24,6 @@ bundle exec rails g backbone:install
 # Create a basic welcome home page
 bundle exec rails g controller Welcome index
 
-# Change the route 'get welcome/index' to 'root welcome#index'
-sed -i "" "s/get/root/g" config/routes.rb
-sed -i "" "s/\//#/g" config/routes.rb
-
 # Replace the application layout with a haml version
 rm app/views/layouts/application.html.erb
 curl -o app/views/layouts/application.html.haml https://raw.github.com/nebspetrovic/rahebo/master/lib/application.html.haml
@@ -47,5 +43,29 @@ createuser -s -r $project_name
 # Create postgres test and dev databases
 createdb ${project_name}_test
 createdb ${project_name}_development
+
+# Create a User model
+bundle exec rails g model User provider uid name oauth_token oauth_expires_at:datetime
+
+# Copy over a pre-configured user model
+curl -o app/models/user.rb https://raw.github.com/nebspetrovic/rahebo/master/lib/user.rb
+
+# Copy over a pre-configured application controller
+curl -o app/controllers/application_controller.rb https://raw.github.com/nebspetrovic/rahebo/master/lib/application_controller.rb
+
+# Create a sessions controller
+bundle exec rails g controller Sessions create destroy
+
+# Copy over a pre-configured sessions controller
+curl -o app/controllers/sessions_controller.rb https://raw.github.com/nebspetrovic/rahebo/master/lib/sessions_controller.rb
+
+# Copy over the pre-configured routes file
+curl -o config/routes.rb https://raw.github.com/nebspetrovic/rahebo/master/lib/routes.rb
+
+# Copy over the preconfigured omniauth initializer
+curl -o config/initializers/omniauth.rb https://raw.github.com/nebspetrovic/rahebo/master/lib/omniauth.rb
+
+# Run migrations
+bundle exec rake db:migrate db:test:prepare
 
 echo "---- RAHEBO COMPLETED SUCCESSFULLY ----"

@@ -11,6 +11,7 @@ gem 'haml-rails'
 gem 'zurb-foundation'
 gem 'rspec-rails'
 gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'figaro'
 gem 'rails_12factor', group: :production
 gem 'backbone-on-rails'
