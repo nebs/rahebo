@@ -8,7 +8,7 @@
   %meta{charset: 'utf-8'}
   %meta{name: 'viewpost', content: 'width=device-width, initial-scale=1.0'}
 
-  %title= content_for?(:title) ? yield(:title) : 'YOUR_TITLE_HERE'
+  %title= content_for?(:title) ? yield(:title) : 'YOUR_TITLE_HERE'.capitalize
 
   = stylesheet_link_tag 'application'
   = javascript_include_tag 'vendor/custom.modernizr'

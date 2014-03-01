@@ -32,6 +32,9 @@ sed -i "" "s/\//#/g" config/routes.rb
 rm app/views/layouts/application.html.erb
 curl -o app/views/layouts/application.html.haml https://raw.github.com/nebspetrovic/rahebo/master/lib/application.html.haml
 
+# Update the title placeholder in the applicationi layout
+sed -i "" "s/YOUR_TITLE_HERE/$project_name/g" app/views/layouts/application.html.haml
+
 # Copy over a postgres database configuration
 curl -o config/database.yml https://raw.github.com/nebspetrovic/rahebo/master/lib/database.yml
 
