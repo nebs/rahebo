@@ -62,6 +62,9 @@ curl -o app/controllers/sessions_controller.rb https://raw.github.com/nebspetrov
 # Copy over the pre-configured routes file
 curl -o config/routes.rb https://raw.github.com/nebspetrovic/rahebo/master/lib/routes.rb
 
+# Add the project name in the routes file
+sed -i "" "s/PROJECT_NAME/$project_name/g" config/routes.rb
+
 # Copy over the preconfigured omniauth initializer
 curl -o config/initializers/omniauth.rb https://raw.github.com/nebspetrovic/rahebo/master/lib/omniauth.rb
 

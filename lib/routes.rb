@@ -1,4 +1,4 @@
-Voices::Application.routes.draw do
+PROJECT_NAME::Application.routes.draw do
   root "welcome#index"
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
