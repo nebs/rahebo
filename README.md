@@ -10,5 +10,5 @@ Usage
 Just open up a terminal and run this command (replacing `PROJECT_NAME` with your project's name):
 
 ```
-curl -s https://raw.github.com/nebspetrovic/rahebo/master/rahebo.sh | bash /dev/stdin PROJECT_NAME
+curl -s https://raw.github.com/nebs/rahebo/master/rahebo.sh | bash /dev/stdin PROJECT_NAME
 ```
